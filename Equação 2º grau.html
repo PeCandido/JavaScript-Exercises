@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Equação do segundo grau</h1>
+    <script>
+        var valor_a = parseFloat(prompt("Digite o valor de A: ", "Digite um número"))
+        var valor_b = parseFloat(prompt("Digite o valor de B: ", "Digite um número"))
+        var valor_c = parseFloat(prompt("Digite o valor de C: ", "Digite um número"))
+
+        if (isNaN(valor_a) || isNaN(valor_b) || isNaN(valor_c)){
+            alert("Valor inválido.");
+        } else {
+            var delta = ((valor_b ** 2) - (4 * valor_a * valor_c))
+
+            if(delta < 0){
+                window.alert("A equação não possuí nenhuma raiz real");
+            } else if(delta == 0){
+                var bhask1 = (-valor_b + (delta)) / (2 * valor_a);
+                window.alert(`O valor ${bhask1} é a única raiz da equação`)
+            } else {
+                var bhask1 = (-valor_b + (delta)) / (2 * valor_a)
+                var bhask2 = (-valor_b - (delta)) / (2 * valor_a)
+                window.alert(`Os valores ${bhask1} e ${bhask2} são as raízes da equação`)
+            }
+        }
+    </script>
+</body>
+</html>

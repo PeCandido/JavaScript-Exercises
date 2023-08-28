@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ano Bissexto</h1>
+    <script>
+        var ano = prompt("Digite o ano: ", "Ano entre 1582 e 2100")
+
+        if(ano >= 1582 && ano <= 2100 && ano != null){
+            var resto1 = ano % 400
+            var resto2 = ano % 4
+            var resto3 = ano % 100
+
+            if(resto1 == 0){
+                window.alert("O ano é bissexto")
+            } else if (resto2 == 0 && resto3 != 0){
+                window.alert("O ano é bissexto")
+            } else{
+                window.alert("O ano não é bissexto")
+            }
+        } else{
+            window.alert("Valor de entrada inválido")
+        }
+    </script>
+</body>
+</html>

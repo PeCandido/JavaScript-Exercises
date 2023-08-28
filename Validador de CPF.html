@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var cpf = prompt("Digite o CPF: ", "Digite apenas os numeros").split("");
+    var digito = null
+
+    if (cpf.length == 11){
+        for (let i = 0; i < 9; i++) {
+                if (isNaN(cpf[i])) {
+                    alert("CPF inválido, digite apenas os números");
+                    break;
+                }
+            }
+        var indice = 0
+        var soma = 0
+        for(let i = 10; i > 1; i--){
+            var operacao = cpf[indice] * i
+            var soma = soma + operacao
+            indice++
+            console.log(operacao)
+            console.log(soma)
+        }
+        var resto1 = soma % 11
+
+        if (resto1 < 2){
+            var digito1 = 0
+        } else {
+            var digito1 = 11 - resto1
+        }
+
+        cpf.push(digito1);
+
+        var indice = 0
+        var soma = 0
+        for(let i = 11; i > 1; i--){
+            var operacao = cpf[indice] * i
+            var soma = soma + operacao
+            indice++
+            console.log(operacao)
+            console.log(soma)
+        }
+        var resto2 = soma % 11
+
+        if (resto2 < 2){
+            var digito2 = 0
+        } else {
+            var digito2 = 11 - resto1
+        }
+
+        if (parseInt(cpf[9]) === digito1 && parseInt(cpf[10]) === digito2) {
+            window.alert("CPF válido");
+        } else {
+            window.alert("CPF inválido");
+        }
+        
+        cpf.push(digito2)
+
+    } else{
+        window.alert("CPF inválido")
+    }
+    </script>
+</body>
+</html>
